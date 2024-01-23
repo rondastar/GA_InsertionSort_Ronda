@@ -38,6 +38,7 @@
                 int previousIndex = i - 1;
 
                 // Shift elements of the sorted part that are greater than currentValue
+                // When the previous element is less than currentValue, the correct position for currentValue has been reached
                 while (previousIndex >= 0 && Comparer<T>.Default.Compare(array[previousIndex], currentValue) > 0)
                 {
                     array[previousIndex + 1] = array[previousIndex];
