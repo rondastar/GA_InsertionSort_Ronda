@@ -37,7 +37,7 @@
                 // Initialize the position for comparing the current element
                 int previousIndex = i - 1;
 
-                // Shift elements of the sorted part that are greater than currentValue
+                // Shift elements of the sorted part that are greater than currentValue.
                 // When the previous element is less than currentValue, the correct position for currentValue has been reached
                 while (previousIndex >= 0 && Comparer<T>.Default.Compare(array[previousIndex], currentValue) > 0)
                 {
@@ -46,6 +46,8 @@
                 } // while loop
 
                 // Place the current element at its correct position
+                // Because the sorted elements that are greater than the current element have been shifted forward, 
+                // the value of the current element can be assigned to its correct position in the sorted part of the array once that position is reached.
                 array[previousIndex + 1] = currentValue;
             } // for loop
         } // InsertionSort
